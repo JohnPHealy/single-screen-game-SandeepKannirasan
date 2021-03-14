@@ -2,12 +2,19 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.InputSystem;
+using UnityEngine.UI;
+using UnityEngine.SceneManagement;
 
 public class playermovement : MonoBehaviour
 {
     [SerializeField] private float moveForce, maxSpeed ,jumpForce;
     [SerializeField] private Collider2D groundCheck;
     [SerializeField] private LayerMask groundLayers;
+
+    //health
+    public int health = 4;
+    public Text healthDisplay;
+
 
 
     private Rigidbody2D myRB;
@@ -16,7 +23,21 @@ public class playermovement : MonoBehaviour
 
     public int extraJump;
 
-   private void Start()
+
+    //health
+    private void Update()
+    {
+        healthDisplay.text = health.ToString();
+
+        if (health <= 0)
+        {
+            SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex);
+        }
+    }
+
+
+
+    private void Start()
     {
         myRB = GetComponent<Rigidbody2D>();
        

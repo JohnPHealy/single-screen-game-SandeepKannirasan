@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
 
-public class ScoreManager : MonoBehaviour
+public class PlayerScoreManager : MonoBehaviour
 {
     public int score;
     public Text scoreDisplay;
@@ -11,17 +11,15 @@ public class ScoreManager : MonoBehaviour
 
     private void Update()
     {
-       scoreDisplay.text = score.ToString();
+        scoreDisplay.text = score.ToString();
     }
 
     private void OnTriggerEnter2D(Collider2D other)
     {
-        if (other.CompareTag("Obstacle"))
+        if (other.CompareTag("Enemybullet"))
         {
             score++;
-            Debug.Log(score);
         }
     }
-
-
 }
+
