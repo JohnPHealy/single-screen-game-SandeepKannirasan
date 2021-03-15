@@ -18,7 +18,7 @@ public class PlayerScoreManager : MonoBehaviour
     {
         if (other.CompareTag("Enemybullet"))
         {
-            score++;
+            score--;
         }
     }
 }
