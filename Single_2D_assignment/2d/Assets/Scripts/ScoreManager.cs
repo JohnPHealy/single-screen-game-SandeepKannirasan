@@ -19,6 +19,7 @@ public class ScoreManager : MonoBehaviour
         if (other.CompareTag("Obstacle"))
         {
             score++;
+            Destroy(other.gameObject);
             Debug.Log(score);
         }
     }

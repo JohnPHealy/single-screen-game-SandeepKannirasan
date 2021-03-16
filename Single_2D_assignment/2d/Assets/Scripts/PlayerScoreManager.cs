@@ -2,6 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
+using UnityEngine.SceneManagement;
 
 public class PlayerScoreManager : MonoBehaviour
 {
@@ -19,6 +20,13 @@ public class PlayerScoreManager : MonoBehaviour
         if (other.CompareTag("Enemybullet"))
         {
             score--;
+
+            Destroy(other.gameObject);
+
+         if(score <= 0)
+            {
+                SceneManager.LoadScene( 0 );
+            }
         }
     }
 }
