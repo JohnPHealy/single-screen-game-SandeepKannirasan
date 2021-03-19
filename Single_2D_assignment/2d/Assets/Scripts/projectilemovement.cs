@@ -6,10 +6,6 @@ public class projectilemovement : MonoBehaviour
 {
     [SerializeField] private float projectileSpeed;
 
-    private void Start()
-    {
-        Destroy(gameObject, 5);
-    }
 
     // Update is called once per frame
     void Update()
