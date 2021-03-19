@@ -14,4 +14,5 @@ public class shooting : MonoBehaviour
        //   Physics.IgnoreCollision(gameObject.GetComponentInParent<Collider>(), bullet.GetComponent<Collider>());
     }
  
+
 }
